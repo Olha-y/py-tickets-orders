@@ -83,7 +83,6 @@ class MovieViewSet(viewsets.ModelViewSet):
         return queryset.distinct()
 
 
-
 class MovieSessionViewSet(viewsets.ModelViewSet):
     queryset = MovieSession.objects.all()
     serializer_class = MovieSessionSerializer
@@ -117,7 +116,6 @@ class MovieSessionViewSet(viewsets.ModelViewSet):
                 .prefetch_related("tickets")
             )
         return queryset
-
 
     def get_serializer_class(self):
         if self.action == "list":
